@@ -10,12 +10,12 @@
  * 5.更多功能正在开发中...
  */
 var mcws=require("mcws");
-var inter;
 var http = require('http')
 var running=0;
 var admin=[];
 var arr=[];
 var modlist=[];
+//var backup=[];
 var server=new mcws(function(choise,message,conn){
 	if(choise=="create"){
 		console.log("Mod was loaded");
@@ -109,7 +109,35 @@ var server=new mcws(function(choise,message,conn){
             {
                 conn.sendcommand("/say §a" + modlist[stcc] + "§f");
             }
-		}
+        }
+        /** 
+        else if(lmessage.slice(0,11)=="./removemod"){
+            lmessage=lmessage.slice(12,lmessage.length)
+            if(admin.includes(message.body.properties.Sender)){
+                if(!(running))
+                {
+                    if(lmessage in modlist)
+                    {
+                        for (var stcc=0;stcc<modlist.length;stcc++)
+                        {
+                            if(modlist[stcc]==lmessage)
+                            {
+
+                            }
+                            backup[stcc]=modlist[stcc];
+                        }
+                    }
+                    else{
+                        conn.sendcommand("/say 未找到有关mod。")
+                    }
+                }
+                else{
+                    conn.sendcommand("/say mod正在运行，请输入./stopmod来停止mod。")
+                }
+            }
+            else {conn.sendcommand("/say §c你不是操作员。");}
+        }
+        */
         else if(lmessage.slice(0,6)=="./runc")
         {
             if(admin.includes(message.body.properties.Sender)){
