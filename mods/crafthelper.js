@@ -52,8 +52,8 @@ module.exports.onmessage=function(choise,message,conn){
 				conn.sendcommand("/say 命令已执行。")
 			}
 			else if(lmessage=="crafthelp"){
-				conn.sendcommand("/say §6clone %开始坐标%~%结束坐标%~%放置坐标%§f:复制方块");
-                conn.sendcommand("/say §6fill ~%开始坐标%~%结束坐标%~%填充方块%§f:填充方块");
+				conn.sendcommand("/say §6clone %开始坐标名%~%结束坐标名%~%放置坐标名%§f:复制方块");
+                conn.sendcommand("/say §6fill ~%开始坐标名%~%结束坐标名%~%填充方块名%§f:填充方块");
                 conn.sendcommand("/say §6setpos %坐标名%§f:设置玩家当前坐标为坐标名");
                 conn.sendcommand("/say §6crafthelp§f:显示此页面。");
 			}
